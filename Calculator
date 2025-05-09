@@ -1,0 +1,71 @@
+import java.util.Scanner;
+public class Calculator 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        String opt="";
+        do
+        {
+            System.out.println("......Welcome to Calculator App........");
+            System.out.println("1.Addition"); 
+            System.out.println("2.Subtraction");  
+            System.out.println("3.Multiplication");  
+            System.out.println("4.Division");  
+            System.out.println("5.Modulus");  
+            System.out.print("Enter your option:");
+            int option=sc.nextInt();
+            if(option<1 || option>5)
+            {
+                System.out.println("Entered option:"+option+" is invalid choose correct option");
+            }
+            else
+            {
+                System.out.print("Enter first number:");
+                int a=sc.nextInt();
+                System.out.print("Enter second number:");
+                int b=sc.nextInt();
+                switch (option)
+                {
+                    case 1->
+                    {
+                        int c=a+b;
+                        System.out.format("%d+%d=%d",a,b,c);
+                    }
+                    case 2->
+                    {
+                        int c=a-b;
+                        System.out.format("%d-%d=%d %n",a,b,c); 
+                    }
+                    case 3->
+                    {
+                        int c=a*b;
+                        System.out.format("%d*%d=%d %n",a,b,c);
+                    }
+                    case 4->
+                    {
+                        if(b!=0)
+                        {
+                            int c=a/b;
+                            System.out.format("%d/%d=%d %n",a,b,c);
+                        }
+                        else
+                        {
+                            System.out.println("Division by Zero.... not possible");
+                        }
+                    }
+                    case 5->
+                    {
+                        int c=a%b;
+                        System.out.format("%d%%%d=%d %n",a,b,c);
+                    }
+                    default->throw new IllegalArgumentException("Enter valid option:"+option);    
+                }
+            }
+            System.out.print("Do you want to continue type (yes/no):");
+            opt=sc.next();
+        }
+        while(opt.equalsIgnoreCase("yes"));
+        System.out.println("..........END.........");
+    }    
+}
