@@ -1,0 +1,106 @@
+import java.util.Scanner;
+
+public class Hotel 
+{
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        String option3="";
+        do
+        {
+            System.out.println("Welcome to Innhotel");
+            System.out.print("Order please:1.Veg(or) 2.Non-veg:");
+            int option=sc.nextInt();
+            switch(option)
+            {
+                case 1->
+                {
+                    float plate_vegmeal=100;
+                    float panner_biryani=200;
+                    float veg_friedrice=250;
+                    System.out.println("1.plate_vegmeal");
+                    System.out.println("2.panner_biryani");
+                    System.out.println("3.veg_friedrice");
+                    System.out.print("order please:");
+                    int opt=sc.nextInt();
+                    int plate_count=0;
+                    switch(opt)
+                    {
+                        case 1->
+                        {
+                            System.out.print("How many plates sir:");
+                            plate_count=sc.nextInt();
+                            float Billing_amount=plate_count*plate_vegmeal;
+                            System.out.println("Here is your order......");
+                            System.out.println("Your Bill sir:"+Billing_amount);
+                        }
+                        case 2->
+                        {
+                            System.out.print("How many plates sir:");
+                            plate_count=sc.nextInt();
+                            float Billing_amount=plate_count*panner_biryani;
+                            System.out.println("Here is your order......");
+                            System.out.println("Your Bill sir:"+Billing_amount);
+                        }
+                        case 3->
+                        {
+                            System.out.print("How many plates sir:");
+                            plate_count=sc.nextInt();
+                            float Billing_amount=plate_count*veg_friedrice;
+                            System.out.println("Here is your order......");
+                            System.out.println("Your Bill sir:"+Billing_amount);
+                        }
+                        default->System.out.println("Invalid option");
+                    }
+                }
+                case 2->
+                {
+                    float Chicken_Biryani=250;
+                    float Chicken_Friedrice=150;
+                    float Mutton_Biryani=350;
+                    System.out.println("1.Chicken_Biryani");
+                    System.out.println("2.Chicken_Friedrice");
+                    System.out.println("3.Mutton_Biryani");
+                    System.out.print("Enter Your option:");
+                    int opt2=sc.nextInt();
+                    int plate_count=0;
+                    switch(opt2)
+                    {
+                        case 1->
+                        {
+                            System.out.print("How many plates sir:");
+                            plate_count=sc.nextInt();
+                            float Billing_amount=plate_count*Chicken_Biryani;
+                            System.out.println("Here is your order......");
+                            System.out.println("Your Bill sir:"+Billing_amount);
+                        }
+                        case 2->
+                        {
+                            System.out.print("How many plates sir:");
+                            plate_count=sc.nextInt();
+                            float Billing_amount=plate_count*Chicken_Friedrice;
+                            System.out.println("Here is your order......");
+                            System.out.println("Your Bill sir:"+Billing_amount);
+                        }
+                        case 3->
+                        {
+                            System.out.print("How many plates sir:");
+                            plate_count=sc.nextInt();
+                            float Billing_amount=plate_count*Mutton_Biryani;
+                            System.out.println("Here is your order......");
+                            System.out.println("Your Bill sir:"+Billing_amount);
+                        }
+                        default->System.out.println("Invalid Option");
+                    }
+                    
+                }
+                default->System.out.println("Invalid option");
+            }
+            System.out.print("Do you want to continue(yes/no):");
+            option3=sc.next();
+            
+        }
+        while (option3.equalsIgnoreCase("yes"));
+        System.out.println(".........Thank you Visit Again..........");
+    }    
+}
